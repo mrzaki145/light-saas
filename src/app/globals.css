@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@import "lenis/dist/lenis.css";
+
+@theme {
+  --color-primary: #010d3e;
+
+  --shadow-card: 0px 7px 14px #eaeaea;
+}
+
+@layer base {
+  html,
+  body {
+    @apply relative overflow-x-hidden;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: -0.05em;
+  }
+
+  h2 {
+    @apply section-title text-3xl font-bold md:text-[54px]/none;
+  }
+
+  p.lead {
+    @apply text-primary text-lg md:text-xl/snug lg:text-2xl/snug;
+  }
+}
+
+@utility container {
+  @apply mx-auto max-w-6xl! px-6 lg:px-4;
+}
+
+@utility nav-link {
+  @apply font-medium text-black/60 transition-colors hover:text-black;
+}
+
+@utility tag {
+  @apply w-fit rounded-lg border border-[#222222]/10 px-3 py-1 text-sm font-medium;
+}
+
+@utility section-title {
+  background: linear-gradient(180deg, #000000 -3.13%, #001e7f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  background-size: cover;
+}
+
+@utility rainbow-text {
+  background: linear-gradient(
+    90deg,
+    #dd7dff 0%,
+    #e1cd86 20%,
+    #8bcb92 40%,
+    #71c2ef 60%,
+    #3bffff 80%,
+    #dd7dff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: animatedgradient 1s ease infinite alternate;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
